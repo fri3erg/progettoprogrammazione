@@ -34,7 +34,23 @@ Map::Map(int colonna, int riga)
         mvaddch(i, x + width - 1, vertical_char);
     }
 
+
+
+
     refresh();
 }
+void Map::draw(int x, int y, char c)
+{
+    mvaddch(y, x, c);
+    mvaddch(y , x - 1, ' '); // cancella il carattere precedente
+    mvaddch(y , x + 1, ' '); // cancella il carattere precedente
+    mvaddch(y + 1 , x, ' '); // cancella il carattere precedente
+
+
+
+    refresh();
+}
+
+
 
 
