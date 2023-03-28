@@ -18,7 +18,7 @@ public:
     void fall();
     void display();
     int x_pos, y_pos;
-    int x_pos_prev_x, y_pos_prev_y;
+
 };
 
 

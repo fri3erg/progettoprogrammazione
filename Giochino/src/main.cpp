@@ -30,7 +30,7 @@ int main(){
             case 'd':
                 player.moveRight();
                 break;
-            case 'space':
+            case 'w':
                 player.jump();
                 break;
             case 's':

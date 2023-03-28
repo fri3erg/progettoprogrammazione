@@ -1,5 +1,6 @@
 #include <ncurses.h>
 #include "character.hpp"
+#include <unistd.h>
 const int dim_colonna = 70;
 const int dim_riga = 25;
 
@@ -21,10 +22,13 @@ void Character::moveRight() {
 }
 
 void Character::jump() {
-    if (y_pos > 1) { // controlla che il personaggio non vada fuori dalla cornice
-        y_pos--;
+    if (y_pos > 2) { // controlla che il personaggio non vada fuori dalla cornice
+        y_pos -= 2; // il personaggio salta di due blocchi
+        usleep(100000); // Pausa per rallentare l'animazione del salto
     }
+
 }
+
 
 void Character::fall() {
     if (y_pos < dim_riga - 2) { // controlla che il personaggio non vada fuori dalla cornice
@@ -36,6 +40,6 @@ void Character::display() {
     mvaddch(y_pos, x_pos, 'P');
     mvaddch(y_pos, x_pos - 1, ' '); // cancella il carattere precedente
     mvaddch(y_pos , x_pos + 1, ' '); // cancella il carattere precedente
-    mvaddch(y_pos + 1 , x_pos , ' '); // cancella il carattere precedente
+    mvaddch(y_pos + 2 , x_pos , ' '); // cancella il carattere precedente
 
 }
