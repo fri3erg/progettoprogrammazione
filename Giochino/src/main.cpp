@@ -44,6 +44,15 @@ int main(){
                 usleep(100000);
                 map.canc(player.x_pos, player.y_pos, 'P');
                 player.jump();
+                //intervallo di spostamento
+                int ch;
+				ch = getch();
+				if(ch == 100){
+					player.moveRight();
+				}if(ch == 97){
+					player.moveLeft();
+				}	
+                //intervallo di spostamento
                 //ritorno a terra
                 player.fall();
                 player.display();
