@@ -22,12 +22,31 @@ void Character::moveRight() {
 }
 
 void Character::jump() {
-    if (y_pos > 2) { // controlla che il personaggio non vada fuori dalla cornice
-        y_pos -= 2; // il personaggio salta di due blocchi
-        usleep(100000); // Pausa per rallentare l'animazione del salto
+    int jump_height = 3;
+    int gravity = 2;
+    int jump_duration = 15;
+    int fall_duration = 5;
+
+    int initial_y_pos = y_pos;
+
+    for (int i = 0; i < jump_duration; i++) {
+        if (y_pos > 2) {
+            y_pos -= jump_height / jump_duration * i;
+            usleep(10000); // Pausa per rallentare l'animazione del salto
+        }
     }
 
+    for (int i = 0; i < fall_duration; i++) {
+        y_pos += gravity / fall_duration * i;
+        usleep(10000); // Pausa per rallentare l'animazione del ritorno a terra
+    }
+
+    // Rimuove la scia del salto
+    for (int i = initial_y_pos; i > y_pos; i--) {
+        mvaddch(i, x_pos, ' ');
+    }
 }
+
 
 
 void Character::fall() {
