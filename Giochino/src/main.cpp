@@ -32,16 +32,40 @@ int main(){
                 break;
             case 'w':
                 player.jump();
-                break;
-            case 's':
+                player.display();
+                refresh();
+                map.canc(player.x_pos, player.y_pos, 'P');
+                usleep(100000);
+                map.canc(player.x_pos, player.y_pos, 'P');
+                player.jump();
+                player.display();
+                refresh();
+                map.canc(player.x_pos, player.y_pos, 'P');
+                usleep(100000);
+                map.canc(player.x_pos, player.y_pos, 'P');
+                player.jump();
+                //ritorno a terra
+                player.fall();
+                player.display();
+                refresh();
+                map.canc(player.x_pos, player.y_pos, 'P');
+                usleep(100000);
+                map.canc(player.x_pos, player.y_pos, 'P');
+                player.fall();
+                player.display();
+                refresh();
+                map.canc(player.x_pos, player.y_pos, 'P');
+                usleep(100000);
+                map.canc(player.x_pos, player.y_pos, 'P');
                 player.fall();
                 break;
             default:
                 break;
         }
-
+        
         // Ri-disegna la mappa e il personaggio
         map.draw(player.x_pos, player.y_pos, 'P');
+        map.canc(player.x_pos, player.y_pos, 'P');
         player.display();
         refresh();
         usleep(refreshspeed*1000);
