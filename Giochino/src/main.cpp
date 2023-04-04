@@ -7,7 +7,7 @@
 #include <locale.h>
 const int dim_colonna = 70;
 const int dim_riga = 25;
-const int refreshspeed = 100; // velocità di refresh dello schermo
+const int refreshspeed = 10; // velocità di refresh dello schermo
 
 int main(){
 
@@ -19,7 +19,9 @@ int main(){
 
     Map map = Map(dim_colonna, dim_riga);
     Character player = Character(dim_colonna/2, dim_riga-2); // istanza il personaggio
-
+    /*
+    Character stormtrooper = Character(dim_colonna/2, dim_riga-2);
+    */
     int c;
     while (true) {
         c = getch();
@@ -49,9 +51,11 @@ int main(){
 				ch = getch();
 				if(ch == 100){
 					player.moveRight();
-				}if(ch == 97){
+				}
+				if(ch == 97){
 					player.moveLeft();
-				}	
+				}
+
                 //intervallo di spostamento
                 //ritorno a terra
                 player.fall();
@@ -68,6 +72,16 @@ int main(){
                 map.canc(player.x_pos, player.y_pos, 'P');
                 player.fall();
                 break;
+            case 'e':
+            	player.displayAtt();
+            	refresh();
+                usleep(300000);
+                break;
+            case 'p':
+				player.displayParry();
+            	refresh();
+            	usleep(300000);
+            	break;
             default:
                 break;
         }

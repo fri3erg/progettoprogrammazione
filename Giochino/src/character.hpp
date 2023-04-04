@@ -17,9 +17,11 @@ public:
     void jump();
     void fall();
     void display();
+    void displayAtt();
+    void displayParry();
     int x_pos, y_pos;
-
 };
+
 
 
 #endif /* CHARACTER_HPP_ */

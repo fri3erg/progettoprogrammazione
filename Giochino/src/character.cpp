@@ -23,7 +23,8 @@ void Character::moveRight() {
 
 void Character::jump() {
     if (y_pos > 2) { // controlla che il personaggio non vada fuori dalla cornice
-        y_pos--; // il personaggio salta di due blocchi
+        y_pos--;
+        y_pos--;// il personaggio salta di due blocchi
     }
 
 }
@@ -32,11 +33,27 @@ void Character::jump() {
 void Character::fall() {
     if (y_pos < dim_riga - 2) { // controlla che il personaggio non vada fuori dalla cornice
         y_pos++;
+        y_pos++;
+
     }
 }
 
 void Character::display() {
     mvaddch(y_pos, x_pos, 'P');
+    mvaddch(y_pos, x_pos - 1, ' '); // cancella il carattere precedente
+    mvaddch(y_pos , x_pos + 1, ' '); // cancella il carattere precedente
+    mvaddch(y_pos + 2 , x_pos , ' '); // cancella il carattere precedente
+
+}
+void Character::displayAtt() {
+    mvaddch(y_pos, x_pos, '/');
+    mvaddch(y_pos, x_pos - 1, ' '); // cancella il carattere precedente
+    mvaddch(y_pos , x_pos + 1, ' '); // cancella il carattere precedente
+    mvaddch(y_pos + 2 , x_pos , ' '); // cancella il carattere precedente
+
+}
+void Character::displayParry() {
+    mvaddch(y_pos, x_pos, '|');
     mvaddch(y_pos, x_pos - 1, ' '); // cancella il carattere precedente
     mvaddch(y_pos , x_pos + 1, ' '); // cancella il carattere precedente
     mvaddch(y_pos + 2 , x_pos , ' '); // cancella il carattere precedente
