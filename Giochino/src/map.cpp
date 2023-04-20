@@ -7,6 +7,7 @@
 
 #include "map.hpp"
 #include <ncurses.h>
+#include <stdlib.h>
 Map::Map(int colonna, int riga)
 {
            // Inizializza la libreria ncurses
@@ -20,6 +21,7 @@ Map::Map(int colonna, int riga)
     int vertical_char = '|';
     int horizontal_char = '-';
 
+    initPattern();
     // Disegna la cornice del rettangolo
     mvaddch(y, x, corner_char);
     mvaddch(y + height - 1, x, corner_char);
@@ -39,9 +41,63 @@ Map::Map(int colonna, int riga)
 
     refresh();
 }
+
+void Map::initPattern(){
+char strcpy( pattern0,    "=============================="
+                          "|                            |"
+                          "|                            |"
+                          "|                            |"
+                          "|                            |"
+                          "|                            |"
+                          "|        ====                |"
+                          "|     ===         ===        |"
+                          "|   ===           ===        |"
+                          "==============================" );
+    strcpy( pattern1,     "=============================="
+                          "|                            |"
+                          "|                            |"
+                          "|                            |"
+                          "|                    ===     |"
+                          "|                            |"
+                          "|     ===         ===    === |"
+                          "|         ===         ===    |"
+                          "|  ===         ===           |"
+                          "==============================" );
+    strcpy( pattern2,     "=============================="
+                          "|                            |"
+                          "|                            |"
+                          "|                            |"
+                          "|                            |"
+                          "|                   ===      |"
+                          "|        ===      ===        |"
+                          "|     ===    ===    ===      |"
+                          "|   ===                  === |"
+                          "==============================" );
+    strcpy( pattern3,     "=============================="
+                          "|                            |"
+                          "|                            |"
+                          "|                 ====       |"
+                          "|              ===    ===    |"
+                          "|           ===     ==  ==   |"
+                          "|          ===               |"
+                          "|     ===                    |"
+                          "|   ===                      |"
+                          "==============================" );
+    strcpy( pattern4,     "=============================="
+                          "|                            |"
+                          "|                            |"
+                          "|                            |"
+                          "|                  ======    |"
+                          "|            ===        ===  |"
+                          "|         ===    === ===     |"
+                          "|       ===                  |"
+                          "|    ====   ===              |"
+                          "==============================" );
+}
 void Map::draw(int x, int y, char c)
 {
-    mvaddch(y, x, c);
+	addch(pattern0);
+    //mvaddch(y, x, c);
     refresh();
 }
 void Map::canc(int x, int y, char c){
