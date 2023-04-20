@@ -1,0 +1,19 @@
+/*
+ * stormtrooper.hpp
+ *
+ *  Created on: 4 apr 2023
+ *      Author: francesco
+ */
+
+#ifndef STORMTROOPER_HPP_
+#define STORMTROOPER_HPP_
+
+class Stormtrooper {
+public:
+    Character(int x, int y);
+
+};
+
+
+
+#endif /* STORMTROOPER_HPP_ */

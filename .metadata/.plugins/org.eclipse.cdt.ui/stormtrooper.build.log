@@ -1,0 +1,7 @@
+14:06:08 **** Build of configuration Debug for project stormtrooper ****
+make all 
+make: *** No rule to make target `src/stormtrooper.o', needed by `stormtrooper'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+14:06:08 Build Failed. 1 errors, 0 warnings. (took 121ms)
+

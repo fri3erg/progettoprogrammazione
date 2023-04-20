@@ -1,0 +1,9 @@
+LaunchTargetManager/configs/Ga=org.eclipse.launchbar.core.launchTargetType.local\:Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=aarch64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=macosx
+activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+configDescList=org.eclipse.cdt.debug.core.coreBuildDescriptorType\:Ga
+eclipse.preferences.version=1
+org.eclipse.cdt.debug.core.coreBuildDescriptorType\:Ga/activeLaunchMode=run
+org.eclipse.cdt.debug.core.coreBuildDescriptorType\:Ga/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

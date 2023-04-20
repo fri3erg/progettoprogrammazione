@@ -1,0 +1,14 @@
+10:19:08 **** Incremental Build of configuration Debug for project character.cpp ****
+make all 
+Building file: ../src/character.cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/character.cpp.d" -MT"src/character.cpp.o" -o "src/character.cpp.o" "../src/character.cpp.cpp"
+../src/character.cpp.cpp:2:10: fatal error: 'character.hpp' file not found
+#include "character.hpp"
+         ^~~~~~~~~~~~~~~
+1 error generated.
+make: *** [src/character.cpp.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+10:19:08 Build Failed. 2 errors, 0 warnings. (took 132ms)
+

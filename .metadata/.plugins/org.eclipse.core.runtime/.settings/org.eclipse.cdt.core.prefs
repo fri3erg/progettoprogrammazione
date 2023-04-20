@@ -1,0 +1,4 @@
+config/Ga/cdt.launchMode=run
+config/Ga/cdt.toolChain.id=gcc-aarch64-/usr/bin/clang
+config/Ga/cdt.toolChain.type=org.eclipse.cdt.build.clang
+eclipse.preferences.version=1
